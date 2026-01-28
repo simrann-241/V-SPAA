@@ -985,17 +985,18 @@ footer::before {
         width: 80%;
         max-width: 280px;
         height: 100vh;
-        z-index: 999;
+        z-index: 9999;
+        /* Very high z-index */
         backdrop-filter: blur(15px);
         transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         flex-direction: column;
         gap: 0;
         padding-top: 100px;
+        box-shadow: 5px 0 30px rgba(0, 0, 0, 0.9);
     }
 
     .main-nav.active {
-        display: flex;
         transform: translateX(0);
     }
 
