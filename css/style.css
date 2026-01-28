@@ -954,11 +954,6 @@ footer::before {
 
 /* Responsive adjustment */
 @media (max-width: 992px) {
-    .nav-section {
-        display: none;
-        /* Hide main desktop nav */
-    }
-
     .mobile-menu-btn {
         display: block;
     }
