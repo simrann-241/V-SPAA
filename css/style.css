@@ -968,7 +968,8 @@ footer::before {
         display: flex;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
+        /* Move to Left */
         width: 80%;
         max-width: 280px;
         height: 100vh;
@@ -980,10 +981,12 @@ footer::before {
         padding-top: 100px;
         gap: 20px;
         transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        transform: translateX(100%);
+        transform: translateX(-100%);
+        /* Start hidden on Left */
         z-index: 1005;
         /* High z-index */
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.9);
+        box-shadow: 5px 0 30px rgba(0, 0, 0, 0.9);
+        /* Shadow to Right */
         border: none;
         /* Removed border */
     }
@@ -1004,7 +1007,7 @@ footer::before {
         /* Full width lines */
         text-align: center;
         opacity: 0;
-        transform: translateX(10px);
+        transform: translateX(-20px);
         transition: all 0.4s ease;
     }
 
