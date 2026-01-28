@@ -160,15 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
-
-        // Close menu with internal close button
-        const menuCloseBtn = document.getElementById('menuCloseBtn');
-        if (menuCloseBtn) {
-            menuCloseBtn.addEventListener('click', () => {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            });
-        }
     }
 
     // ============ PHONE BUTTON ============
