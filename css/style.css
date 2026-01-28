@@ -1096,6 +1096,34 @@ footer::before {
     }
 }
 
+/* ============ FLOATING BUTTONS ============ */
+.phone-float {
+    position: fixed;
+    bottom: 105px;
+    /* Above WhatsApp */
+    right: 30px;
+    background-color: #3498db;
+    /* Phone Blue */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 26px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phone-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+}
+
 /* ============ WHATSAPP FLOAT ============ */
 .whatsapp-float {
     position: fixed;

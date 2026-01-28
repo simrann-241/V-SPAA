@@ -162,6 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ============ PHONE BUTTON ============
+    const phoneBtn = document.createElement('a');
+    phoneBtn.href = "tel:+917788872255";
+    phoneBtn.className = "phone-float";
+    phoneBtn.innerHTML = '<i class="fas fa-phone-alt"></i>';
+    document.body.appendChild(phoneBtn);
+
     // ============ WHATSAPP BUTTON ============
     const whatsappBtn = document.createElement('a');
     whatsappBtn.href = "https://wa.me/917788872255";
