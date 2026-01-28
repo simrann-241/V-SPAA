@@ -610,10 +610,48 @@ section {
     margin-bottom: 20px;
 }
 
+/* ============ MARQUEE SECTION ============ */
+.marquee-container {
+    background: var(--gold-primary);
+    color: var(--black);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: fixed;
+    top: 100px;
+    /* Below header */
+    width: 100%;
+    z-index: 900;
+    border-bottom: 2px solid #fff;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scrollText 20s linear infinite;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.marquee-content span {
+    margin-right: 50px;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 /* ============ SUITES SECTION ============ */
 .Suites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Optimized for mobile */
     gap: 40px;
 }
 
@@ -652,9 +690,15 @@ section {
 }
 
 /* ============ MASSAGES SECTION ============ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .massage-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Mobile friendly */
     gap: 30px;
 }
 
@@ -751,7 +795,7 @@ section {
 /* ============ CONTACT SECTION ============ */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
