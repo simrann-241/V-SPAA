@@ -952,171 +952,120 @@ footer::before {
     z-index: 1001;
 }
 
-/* ============ MOBILE NAVIGATION ============ */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--gold-primary);
-    font-size: 28px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    z-index: 1001;
-}
-
 /* Responsive adjustment */
-@media (max-width: 1100px) {
-    .nav-section {
-        display: none;
-    }
-
+@media (max-width: 992px) {
     .mobile-menu-btn {
         display: block;
     }
 
+    .book-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    /* Tea Bar Style Full Menu */
     .main-nav {
-        display: none;
-        background: rgba(0, 0, 0, 0.98);
-        padding: 20px;
-        border-top: 2px solid var(--gold-primary);
-        position: absolute;
-        top: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
-        backdrop-filter: blur(15px);
-        transform-origin: top;
-        transform: scaleY(0);
-        transition: transform 0.3s ease;
+        height: 100vh;
+        background: #000;
+        /* Pure Black */
         flex-direction: column;
-        gap: 0;
+        justify-content: center;
+        /* Center links vertically */
+        align-items: center;
+        padding-top: 0;
+        gap: 30px;
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform: translateY(-100%);
+        /* Slide from Top */
+        z-index: 2000;
+        /* Top of everything */
+        box-shadow: none;
+        border: none;
     }
 
     .main-nav.active {
-        display: flex;
-        transform: scaleY(1);
+        transform: translateY(0);
     }
 
     .main-nav .nav-link {
-        display: block;
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: none;
-        padding: 15px 20px;
+        font-size: 24px;
         font-weight: 600;
-        text-transform: uppercase;
         letter-spacing: 1px;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-        transition: all 0.3s ease;
-        font-size: 14px;
-        opacity: 0;
-        transform: translateX(-20px);
-        animation: slideInMobileLink 0.3s ease forwards;
-    }
-
-    @keyframes slideInMobileLink {
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .main-nav .nav-link:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .main-nav .nav-link:nth-child(2) {
-        animation-delay: 0.15s;
-    }
-
-    .main-nav .nav-link:nth-child(3) {
-        animation-delay: 0.2s;
-    }
-
-    .main-nav .nav-link:nth-child(4) {
-        animation-delay: 0.25s;
-    }
-
-    .main-nav .nav-link:nth-child(5) {
-        animation-delay: 0.3s;
-    }
-
-    .main-nav .nav-link:nth-child(6) {
-        animation-delay: 0.35s;
-    }
-
-    .main-nav .nav-link:last-child {
+        color: #fff;
+        text-transform: capitalize;
         border-bottom: none;
+        padding-bottom: 0;
+        width: auto;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
     }
 
+    .main-nav.active .nav-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Highlight Active Link - Full Box */
     .main-nav .nav-link:hover {
-        color: var(--gold-primary);
-        background: rgba(255, 215, 0, 0.05);
-        padding-left: 25px;
+        background-color: #ff6b6b;
+        color: white;
+        width: 80%;
+        padding: 15px 30px;
+        border-radius: 8px;
     }
 
-    .book-btn {
-        padding: 10px 20px;
-        font-size: 13px;
+    /* Internal Menu Header */
+    .menu-header {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 40px);
+        z-index: 10;
+    }
+
+    .menu-logo img {
+        width: 50px;
+        border-radius: 50%;
+    }
+
+    .menu-close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-close-btn span {
+        font-size: 10px;
+        text-transform: uppercase;
+        margin-top: 5px;
     }
 
     .header-wrapper {
-        padding: 15px 0;
+        padding: 10px 0;
         position: relative;
-    }
-
-    .hero {
-        margin-top: 80px;
-        padding: 150px 0 100px;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .header-wrapper {
-        flex-wrap: nowrap;
-        gap: 15px;
+        z-index: 1002;
     }
 
     .logo-container {
-        width: 50px;
-        height: 50px;
-    }
-
-    .logo-main {
-        font-size: 22px;
-    }
-
-    .logo-sub {
-        font-size: 9px;
-    }
-
-    .book-btn {
-        padding: 10px 20px;
-        font-size: 13px;
-    }
-
-    .hero {
-        padding: 120px 0 80px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
+        width: 60px;
+        height: 60px;
     }
 
     .footer-content {
@@ -1124,29 +1073,33 @@ footer::before {
         gap: 40px;
     }
 
-    .footer-col {
-        text-align: center;
+    .footer-about p {
+        max-width: 100%;
     }
 }
 
-/* Mobile Phones */
-@media (max-width: 576px) {
-    .preloader-logo {
-        width: 100px;
-        height: 100px;
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
     }
 
-    .header-wrapper {
-        padding: 12px 0;
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: 4px;
     }
 
-    .logo-section {
-        gap: 12px;
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
-    .logo-container {
-        width: 45px;
-        height: 45px;
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 
     .logo-main {
@@ -1155,64 +1108,23 @@ footer::before {
 
     .logo-sub {
         font-size: 8px;
+        letter-spacing: 1px;
     }
 
-    .book-btn {
-        padding: 8px 16px;
+    .action-section .book-btn {
+        padding: 8px 15px;
         font-size: 12px;
     }
 
-    .hero {
-        padding: 100px 0 60px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .btn {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-
-    .section-title h2 {
-        font-size: 24px;
-    }
-
-    .marquee-content span {
-        font-size: 12px;
-        padding: 0 20px;
-    }
-
-    .shimmer-gold {
-        font-size: 36px;
+    .services-table {
+        display: block;
+        overflow-x: auto;
     }
 }
 
-/* Small Phones */
-@media (max-width: 400px) {
-    .logo-main {
-        font-size: 18px;
-    }
-
-    .logo-sub {
-        display: none;
-    }
-
+@media (max-width: 480px) {
     .hero h1 {
-        font-size: 24px;
-    }
-
-    .section-title h2 {
-        font-size: 22px;
+        font-size: 32px;
     }
 
     .btn {

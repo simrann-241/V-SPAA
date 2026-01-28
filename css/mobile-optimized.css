@@ -1,0 +1,328 @@
+/* ============ MOBILE NAVIGATION ============ */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--gold-primary);
+    font-size: 28px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    z-index: 1001;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1100px) {
+    .nav-section {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        background: rgba(0, 0, 0, 0.98);
+        padding: 20px;
+        border-top: 2px solid var(--gold-primary);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        backdrop-filter: blur(15px);
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav.active {
+        display: flex;
+        transform: scaleY(1);
+    }
+
+    .main-nav .nav-link {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        padding: 15px 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        transition: all 0.3s ease;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideInMobileLink 0.3s ease forwards;
+    }
+
+    @keyframes slideInMobileLink {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .main-nav .nav-link:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .main-nav .nav-link:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .main-nav .nav-link:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .main-nav .nav-link:nth-child(4) {
+        animation-delay: 0.25s;
+    }
+
+    .main-nav .nav-link:nth-child(5) {
+        animation-delay: 0.3s;
+    }
+
+    .main-nav .nav-link:nth-child(6) {
+        animation-delay: 0.35s;
+    }
+
+    .main-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav .nav-link:hover {
+        color: var(--gold-primary);
+        background: rgba(255, 215, 0, 0.05);
+        padding-left: 25px;
+    }
+
+    .book-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .header-wrapper {
+        padding: 15px 0;
+        position: relative;
+    }
+
+    .hero {
+        margin-top: 80px;
+        padding: 150px 0 100px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+
+    .logo-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-main {
+        font-size: 22px;
+    }
+
+    .logo-sub {
+        font-size: 9px;
+    }
+
+    .book-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .preloader-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header-wrapper {
+        padding: 12px 0;
+    }
+
+    .logo-section {
+        gap: 12px;
+    }
+
+    .logo-container {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-main {
+        font-size: 20px;
+    }
+
+    .logo-sub {
+        font-size: 8px;
+    }
+
+    .book-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .marquee-content span {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+
+    .shimmer-gold {
+        font-size: 36px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+    .logo-main {
+        font-size: 18px;
+    }
+
+    .logo-sub {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ============ FLOATING BUTTONS ============ */
+.phone-float {
+    display: none;
+    /* User requested removal */
+    position: fixed;
+    bottom: 105px;
+    /* Above WhatsApp */
+    right: 30px;
+    background-color: #3498db;
+    /* Phone Blue */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 26px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phone-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* ============ WHATSAPP FLOAT ============ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
