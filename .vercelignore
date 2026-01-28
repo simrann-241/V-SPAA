@@ -1,0 +1,7 @@
+node_modules
+.git
+.gemini
+*.backup
+fix-mobile.py
+mobile-optimized.css
+.DS_Store
