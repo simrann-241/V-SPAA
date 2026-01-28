@@ -161,4 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ============ WHATSAPP BUTTON ============
+    const whatsappBtn = document.createElement('a');
+    whatsappBtn.href = "https://wa.me/917788872255";
+    whatsappBtn.className = "whatsapp-float";
+    whatsappBtn.target = "_blank";
+    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    document.body.appendChild(whatsappBtn);
 });
