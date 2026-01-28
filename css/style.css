@@ -1013,12 +1013,13 @@ footer::before {
         transform: translateY(0);
     }
 
-    /* Highlight Active Link */
+    /* Highlight Active Link - Full Box */
     .main-nav .nav-link:hover {
         background-color: #ff6b6b;
         color: white;
-        width: 100%;
-        padding: 10px 0;
+        width: 80%;
+        padding: 15px 30px;
+        border-radius: 8px;
     }
 
     /* Internal Menu Header */
@@ -1031,6 +1032,7 @@ footer::before {
         justify-content: space-between;
         align-items: center;
         width: calc(100% - 40px);
+        z-index: 10;
     }
 
     .menu-logo img {
